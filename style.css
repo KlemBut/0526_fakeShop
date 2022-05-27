@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap");
+body {
+  font-family: "Spline Sans Mono", sans-serif;
+  background-color: rgb(244, 244, 244);
+}
+body nav {
+  background-color: white;
+  height: 50px;
+  width: 95.5%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+body nav a {
+  text-decoration: none;
+  color: black;
+}
+body nav a:hover {
+  text-decoration: underline;
+}
+body .mainWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  row-gap: 10px;
+  justify-content: center;
+}
+body .mainWrapper .productWrapper {
+  background-color: white;
+  width: 22%;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+body .mainWrapper .productWrapper .imgs {
+  height: 200px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px ridge rgba(235, 235, 235, 0.3803921569);
+  margin-left: -4px;
+}
+body .mainWrapper .productWrapper .textItem {
+  margin: 0;
+  width: 100%;
+}
+body .mainWrapper .productWrapper .textItem .priceNButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+body .mainWrapper .productWrapper .textItem .priceNButton h4 {
+  margin: 0;
+}
+body .mainWrapper .productWrapper .textItem .priceNButton input {
+  background: #CDCDCD;
+  background-image: -o-linear-gradient(top, #CDCDCD, #ABABAB);
+  background-image: -webkit-gradient(to bottom, #CDCDCD, #ABABAB);
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: Brush Script MT;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 10px;
+  box-shadow: 5px 4px 10px 1px rgba(0, 0, 0, 0.22);
+  border: solid #AFAFAF 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+body .mainWrapper .productWrapper .textItem span {
+  font-weight: 300;
+  color: gray;
+}
+body .mainWrapper .productWrapper .textItem p {
+  text-align: justify;
+  overflow: hidden;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */
