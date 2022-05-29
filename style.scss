@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap');
+
 body{
     nav{
+        position: sticky;
+        top: 0;
         background-color: white;
         height: 50px;
         width: 95.5%;
