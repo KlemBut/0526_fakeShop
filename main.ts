@@ -2,6 +2,8 @@ let mainWrapper = document.createElement("div") as HTMLElement;
 mainWrapper.classList.add("mainWrapper");
 document.querySelector(`body`)?.append(mainWrapper);
 
+// Interface for products objects
+
 interface ProductsInterface {
   id: number;
   title: string;
@@ -11,18 +13,29 @@ interface ProductsInterface {
   image: string;
   quantity: number;
 }
+
+// Emprty variables for cart and all products
+
 let cart: ProductsInterface[] = [];
 let products: ProductsInterface[] = [];
+
+
 
 async function getProducts(): Promise<ProductsInterface[]> {
   let productsResponse = await fetch(`https://fakestoreapi.com/products`);
   let productsData: ProductsInterface[] = await productsResponse.json();
   return productsData;
 }
+
+// Rendering all products cards from getProducts function
+
 async function renderCards() {
   products = await getProducts();
 
   products.map((product: ProductsInterface) => {
+
+// Creating all HTML elements
+
     let productItem = document.createElement(`div`) as HTMLElement;
     let addToCart = document.createElement(`input`) as HTMLButtonElement;
     let image = document.createElement(`div`) as HTMLElement;
@@ -32,9 +45,13 @@ async function renderCards() {
     let price = document.createElement(`h4`) as HTMLElement;
     let description = document.createElement(`p`) as HTMLElement;
     let category = document.createElement(`span`) as HTMLElement;
-//@ts-ignore
-    image.style = ` background-image: url(${product.image});
-                    `;
+
+//Adding bg image for product cards
+    //@ts-ignore
+    image.style = ` background-image: url(${product.image})`;
+
+// Adding text, classes and attributes to HTML elements
+
     productItem.classList.add(`productWrapper`);
     priceNButton.classList.add(`priceNButton`);
     image.classList.add(`imgs`);
@@ -46,6 +63,8 @@ async function renderCards() {
     addToCart.setAttribute(`value`, `Add to Cart`);
     addToCart.setAttribute(`id`, `${product.id}`);
     textArea.classList.add(`textItem`);
+
+// Appending the elements
 
     mainWrapper.append(productItem);
     productItem.prepend(image);
@@ -60,6 +79,8 @@ async function renderCards() {
   });
 }
 renderCards();
+
+// function for add to cart button
 
 function addToCRT(e: any): void {
   const id: number = Number(e.target.id);
@@ -79,6 +100,8 @@ function addToCRT(e: any): void {
   toLocalStorage();
 }
 
+// function to update element with quantity if items in cart0
+
 function countCart(): void {
   let quantityCounter: number = 0;
   cart.map((x: ProductsInterface) => {
@@ -89,6 +112,8 @@ function countCart(): void {
     `.cart`
   )?.textContent = `Items in cart ${quantityCounter}`;
 }
+
+//  function to add item price to total price
 
 function pricer(): void {
   let totalPrice: number = 0;
